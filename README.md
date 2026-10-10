@@ -15,8 +15,8 @@
 
 ## Overview
 
-This bot handles the questions a software agency gets asked over and over — what do you
-build, what does it cost, how long does it take, do you sign an NDA — without an LLM, a
+This bot handles the questions a software agency gets asked over and over, things like what do you
+build, what does it cost, how long does it take, do you sign an NDA, and it does so without an LLM, a
 training step or a single third-party package.
 
 It works by **keyword-to-intent mapping**. Incoming text is normalised, scanned for known
@@ -68,7 +68,7 @@ Multiple keywords deliberately collapse onto one intent, so "how much does it co
 
 ## Running it
 
-Requires Python 3 — nothing else.
+Requires Python 3 and nothing else.
 
 ```bash
 git clone https://github.com/AreeshaKhan25/chatbot-python.git
@@ -121,7 +121,7 @@ keyword_map = {
 | File | Purpose |
 |------|---------|
 | `chatbot.py` | Keyword matching, fallback handling, console loop |
-| `faq.json` | The knowledge base — every answer the bot can give |
+| `faq.json` | The knowledge base, every answer the bot can give |
 
 ---
 
@@ -131,7 +131,7 @@ This is a deliberately simple baseline, and it behaves like one:
 
 - Matching is substring-based, so an unexpected phrasing with no known keyword falls
   through to the fallback.
-- There is no conversation memory — each turn is handled independently.
+- There is no conversation memory, so each turn is handled independently.
 - The first matching keyword wins; it does not rank or score competing intents.
 
 A sensible next step would be fuzzy matching or TF-IDF similarity over the question set
